@@ -53,40 +53,33 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-let mostrador = document.getElementById("mostrador");
-let seleccion = document.getElementById("seleccion");
-let imgSeleccionada = document.getElementById("img");
-let modeloSeleccionado = document.getElementById("modelo");
-let descripSeleccionada = document.getElementById("descripcion");
-let precioSeleccionado = document.getElementById("precio");
+let preveiwContainer = document.querySelector('.products-preview');
+let previewBox = preveiwContainer.querySelectorAll('.preview');
 
-function cargar(item){
-    quitarBordes();
-    mostrador.style.width = "60%";
-    seleccion.style.width = "40%";
-    seleccion.style.opacity = "1";
-    item.style.border = "2px solid red";
+document.querySelectorAll('.products-container .product').forEach(product =>{
+  product.onclick = () =>{
+    preveiwContainer.style.display = 'flex';
+    let name = product.getAttribute('data-name');
+    previewBox.forEach(preview =>{
+      let target = preview.getAttribute('data-target');
+      if(name == target){
+        preview.classList.add('active');
+      }
+    });
+  };
+});
 
-    imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
+previewBox.forEach(close =>{
+  close.querySelector('.fa-times').onclick = () =>{
+    close.classList.remove('active');
+    preveiwContainer.style.display = 'none';
+  };
+});
 
-    modeloSeleccionado.innerHTML =  item.getElementsByTagName("p")[0].innerHTML;
+const toggle = document.querySelector('.toggle')
+const links = document.querySelector('.links')
 
-    descripSeleccionada.innerHTML = "Descripción del modelo ";
-
-    precioSeleccionado.innerHTML =  item.getElementsByTagName("span")[0].innerHTML;
-
-
-}
-function cerrar(){
-    mostrador.style.width = "100%";
-    seleccion.style.width = "0%";
-    seleccion.style.opacity = "0";
-    quitarBordes();
-}
-function quitarBordes(){
-    var items = document.getElementsByClassName("item");
-    for(i=0;i <items.length; i++){
-        items[i].style.border = "none";
-    }
-}
-
+toggle.addEventListener('click', () => {
+    toggle.classList.toggle('rotate')
+    links.classList.toggle('active')
+})

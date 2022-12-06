@@ -60,7 +60,7 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
+  --bs-body-color: #e8ebef;
   --bs-body-bg: #fff;
 }
 
@@ -155,10 +155,10 @@ body {
   width: 10em;
   height: 3em;
   font-size: 1em;
-  background-color: #222;
+  background-color: rgb(238, 235, 235);
   box-shadow: 5px 5px 5px #121212, -5px -5px -5px #323232;
   border: none;
-    
+  
 }
 .navbat:hover{
   box-shadow: 5px 5px 5px #121212 inset, -5px -5px -5px #212121 inset;
@@ -214,7 +214,7 @@ body {
 }
 
 
- .serch-bar-input{
+.serch-bar-input{
   background: transparent;
   flex: 1;
   border: 0;
@@ -303,3 +303,122 @@ header.masthead .masthead-subheading {
   margin-right: auto;
   margin-left: auto;
 }
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #092236;
+  overflow: hidden;
+}
+
+nav {
+  background: #021222;
+  height: 80px;
+  position: relative;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  line-height: 80px;
+  z-index: 100;
+}
+
+.container-logo {
+  margin-left: 20px;
+  z-index: 100;
+  left: -300px;
+  position: relative;
+  cursor: pointer;
+}
+
+.container-logo h2 {
+  color: #95bdd8;
+  font-weight: 300;
+  font-size: 35px;
+  letter-spacing: 2px;
+}
+
+.container-logo h2 span {
+  color: #0590ec;
+  font-weight: 700;
+}
+
+.links .link {
+  display: inline-block;
+}
+
+.links .link a {
+  text-decoration: none;
+  color: #d1faf4;
+  font-size: 20px;
+  margin: 0 25px;
+  letter-spacing: 3px;
+  transition: .3s;
+}
+
+.links .link a:hover {
+  color: #cccdce;
+}
+
+.toggle {
+  color: #d1faf4;
+  margin-right: 20px;
+  font-size: 30px;
+  transform: rotate(90deg);
+  cursor: pointer;
+  transition: .3s;
+  display: none;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 800px){
+  .toggle {
+      display: inline-block;
+  }
+
+  .links {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: #151345;
+      text-align: center;
+      overflow: hidden;
+      height: calc(100vh - 80px);
+      width: 100%;
+      z-index: -1;
+      top: -100vh;
+      left: 400px;
+      transition: .5s;
+  }
+
+  .active {
+      top: 80px;
+  }
+
+  .links .link:hover {
+      background: #291e17;
+  }
+  
+}
+
+
+
+

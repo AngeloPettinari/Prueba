@@ -1,114 +1,192 @@
 {% extends 'Airsoft/base.html' %}
 {% block contenido %}
-    <h1>Ingrese su tipo de replica que desea.</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{formulario.as_p}}
-        <input type="submit" value="Tipo de replica">
-    </form>
-{% endblock %}
+<h1>Ingrese su tipo de replica que desea.</h1>
+
+
+{% load static %}    
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
-    <title>CALZADO DEPORTIVO</title>
-</head>
-<body>
-    <section class="contenido">
-        <div class="mostrador" id="mostrador">
-            <div class="fila">
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="/AppAirsoft/static/Airsoft/assets/img/replicas/1.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE AIR 97</p>
-                    <span class="precio">$ 1.300</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="/AppAirsoft/static/Airsoft/assets/img/replicas/2.png" alt="">
-                    </div>
-                    <p class="descripcion" id>NIKE RUNNING TERRA </p>
-                    <span class="precio">$ 1.800</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="/AppAirsoft/static/Airsoft/assets/img/replicas/3.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE WINFLO 8
-                    </p>
-                    <span class="precio">$ 3.600</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="/AppAirsoft/static/Airsoft/assets/img/replicas/4.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE LOW-TOP</p>
-                    <span class="precio">$ 1.800</span>
-                </div>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <!-- font awesome cdn link  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <link rel='stylesheet' href="{% static 'Airsoft/css/style.css' %}" type='text/css'>
+      <script src="js/script.js" defer></script>
+   </head>
+   <body>
+      <div class="container">
+         <h3 class="title"> REPLICAS </h3>
+         <div class="products-container">
+      
+            <div class="product" data-name="p-1">
+               <img src="images/1.png" alt="">
+               <h3>M4A1</h3>
+               <div class="price">$1.900</div>
             </div>
-            <div class="fila">
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="/AppAirsoft/static/Airsoft/assets/img/replicas/5.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE BLAZER 97</p>
-                    <span class="precio">$ 130</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="/AppAirsoft/static/Airsoft/assets/img/replicas/6.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE LEGEND ESENTIAL</p>
-                    <span class="precio">$ 2.000</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="/AppAirsoft/static/Airsoft/assets/img/replicas/7.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE AIR ZOOM</p>
-                    <span class="precio">$ 2.500</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="/AppAirsoft/static/Airsoft/assets/img/replicas/8.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE TERRA KING</p>
-                    <span class="precio">$ 1.800</span>
-                </div>
-            </div> 
-        </div>
-        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
-        <div class="seleccion" id="seleccion">
-            <div class="cerrar" onclick="cerrar()">
-                &#x2715
+      
+            <div class="product" data-name="p-2">
+               <img src="images/2.png" alt="">
+               <h3>SCAR-H</h3>
+               <div class="price">$2.100</div>
             </div>
-            <div class="info">
-                <img src="C:\Users\Piruu\Desktop\Tienda_Airsoft\AppAirsoft\static\Airsoft\assets\img\replicas\1.png" alt="" id="img">
-                <h2 id="modelo">NIKE MODEL 1</h2>
-                <p id="descripcion">Descripción Modelo 1</p>
-
-                <span class="precio" id="precio">$ 130</span>
-
-                <div class="fila">
-                    <div class="size">
-                        <label for="">SIZE</label>
-                        <select name="" id="">
-                            <option value="">40</option>
-                            <option value="">42</option>
-                            <option value="">44</option>
-                            <option value="">46</option>
-                        </select>
-                    </div>
-                    <button>AGREGAR AL CARRITO</button>
-                </div>
+      
+            <div class="product" data-name="p-3">
+               <img src="images/3.png" alt="">
+               <h3>VECTOR</h3>
+               <div class="price">$1.600</div>
             </div>
-        </div>
-    </section>
-
-    <script src="scripts.js"></script>
-</body>
+      
+            <div class="product" data-name="p-4">
+               <img src="images/4.png" alt="">
+               <h3>AK-47</h3>
+               <div class="price">$2.300</div>
+            </div>
+      
+            <div class="product" data-name="p-5">
+               <img src="images/5.png" alt="">
+               <h3>AK-74U</h3>
+               <div class="price">$2.000</div>
+            </div>
+      
+            <div class="product" data-name="p-6">
+               <img src="images/6.png" alt="">
+               <h3>ACR</h3>
+               <div class="price">$3.000</div>
+            </div>
+         </div>
+      </div>
+      
+      <div class="products-preview">
+      
+         <div class="preview" data-target="p-1">
+            <i class="fas fa-times"></i>
+            <img src="images/1.png" alt="">
+            <h3>oM4A1</h3>
+            <div class="stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+               <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+               <a href="#" class="buy">buy now</a>
+               <a href="#" class="cart">add to cart</a>
+            </div>
+         </div>
+      
+         <div class="preview" data-target="p-2">
+            <i class="fas fa-times"></i>
+            <img src="images/2.png" alt="">
+            <h3>SCAR-H</h3>
+            <div class="stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+               <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+               <a href="#" class="buy">buy now</a>
+               <a href="#" class="cart">add to cart</a>
+            </div>
+         </div>
+      
+         <div class="preview" data-target="p-3">
+            <i class="fas fa-times"></i>
+            <img src="images/3.png" alt="">
+            <h3>VECTOR</h3>
+            <div class="stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+               <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+               <a href="#" class="buy">buy now</a>
+               <a href="#" class="cart">add to cart</a>
+            </div>
+         </div>
+      
+         <div class="preview" data-target="p-4">
+            <i class="fas fa-times"></i>
+            <img src="images/4.png" alt="">
+            <h3>AK-74</h3>
+            <div class="stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+               <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+               <a href="#" class="buy">buy now</a>
+               <a href="#" class="cart">add to cart</a>
+            </div>
+         </div>
+      
+         <div class="preview" data-target="p-5">
+            <i class="fas fa-times"></i>
+            <img src="images/5.png" alt="">
+            <h3>AK-74U</h3>
+            <div class="stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+               <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+               <a href="#" class="buy">buy now</a>
+               <a href="#" class="cart">add to cart</a>
+            </div>
+         </div>
+      
+         <div class="preview" data-target="p-6">
+            <i class="fas fa-times"></i>
+            <img src="images/6.png" alt="">
+            <h3>ACR</h3>
+            <div class="stars">
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star"></i>
+               <i class="fas fa-star-half-alt"></i>
+               <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+               <a href="#" class="buy">buy now</a>
+               <a href="#" class="cart">add to cart</a>
+            </div>
+         </div>
+      </div>
+   </body>
 </html>
+<form action="" method="post">
+   {% csrf_token %}
+   {{formulario.as_p}}
+   <input type="submit" value="Tipo de replica">
+</form>
+{% endblock %}
+
