@@ -64,17 +64,14 @@
   --bs-body-bg: #fff;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
+
+
+
+
+
+
+
 
 
 body {
@@ -91,61 +88,6 @@ body {
 }
   
   
-  
-.containerBarra{
-  width: 50%;
-  min-height: 100vh;
-  padding: 10%;
-  background-image: linear-gradient(rgba(16, 11, 36, 0), rgba(11, 5, 23, 0)), url(./background.jpg);
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-  
-  
-  
-.serch-bar{
-  width: 50%;
-  max-width: 200px;
-  background-color: rgba(0, 0, 0, 0.837);
-  display: flex;
-  align-items: center;
-  border-radius: 60px;
-  padding: 10px 20px;
-  backdrop-filter: blur(4px) saturate(50%);
-}
-  
-  
-.serch-bar-input{
-  background: transparent;
-  flex: 1;
-  border: 0;
-  outline: none;
-  padding: 24px 20px;
-  font-size: 20px;
-  color: #cac7ff;
-}
-  
-  
-::placeholder{
-  color: #cac7ff;
-}
-  
-.serch-bar button img{
-  width: 25px;
-  
-}
-  
-.serch-bar button{
-  border: 0;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  background: #586296;
-  cursor: pointer;
-}
 
 .navbar {
   position: relative;
@@ -389,35 +331,41 @@ nav {
   transform: rotate(180deg);
 }
 
-@media screen and (max-width: 800px){
-  .toggle {
-      display: inline-block;
-  }
-
-  .links {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      background: #151345;
-      text-align: center;
-      overflow: hidden;
-      height: calc(100vh - 80px);
-      width: 100%;
-      z-index: -1;
-      top: -100vh;
-      left: 400px;
-      transition: .5s;
-  }
-
-  .active {
-      top: 80px;
-  }
-
-  .links .link:hover {
-      background: #291e17;
-  }
-  
+@media screen and (max-width: 800px){}
+.toggle {
+  display: inline-block;
 }
+
+.links {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #151345;
+  text-align: center;
+  overflow: hidden;
+  height: calc(100vh - 80px);
+  width: 100%;
+  z-index: -1;
+  top: -100vh;
+  left: 400px;
+  transition: .5s;S
+}
+
+.active {
+  top: 80px;
+}
+
+.links .link:hover {
+  background: #291e17;
+}
+
+
+
+
+
+
+
+
 
 
 
